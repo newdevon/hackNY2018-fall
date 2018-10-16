@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html>
+<title>W3.CSS Template for HackNY</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+  
+    <a href="#home" class="w3-bar-item w3-button"><b>Qonnect</b> 
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-centre w3-hide-small">
+      <a href="#scanner" class="w3-bar-item w3-button">Scan</a>
+      <a href="#information" class="w3-bar-item w3-button">Information</a>
+      <a href="#about" class="w3-bar-item w3-button">How it works</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact us</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="https://static.vecteezy.com/system/resources/thumbnails/000/097/181/small/free-black-leather-vector.jpg" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"> <span class="w3-hide-small w3-text-light-grey">
+    
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=www.instagram.com" alt="QR code" style="width:100%">
+    
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+<!-- Scan Section -->
+  <div class="w3-container w3-padding-32" id="scanner">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Scan</h3>
+    <p> This page contains a scanning button which can open up a search box on your computer which you can use to search for the downloaded image of the QR code. After scanning it through a camera-enabled device, it will take you to the profile of the person you have just scanned. 
+    There is also a "scan manually" button for you to place your camera in front of the code and wait for the approved scan to take you to the profile of the person. 
+    </p>
+    
+    <style>
+body, input {font-size:14pt}
+input, label {vertical-align:middle}
+.qrcode-text {padding-right:1.7em; margin-right:0}
+.qrcode-text-btn {display:inline-block; background:url(//dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg) 50% 50% no-repeat; height:1em; width:1.7em; margin-left:-1.7em; cursor:pointer}
+.qrcode-text-btn > input[type=file] {position:absolute; overflow:hidden; width:1px; height:1px; opacity:0}
+</style>
+
+<script src="https://dmla.github.io/jsqrcode/src/qr_packed.js"></script>
+<script>
+	function openQRCamera(node) {
+  var reader = new FileReader();
+  reader.onload = function() {
+    node.value = "";
+    qrcode.callback = function(res) {
+      if(res instanceof Error) {
+        alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
+      } else {
+        node.parentNode.previousElementSibling.value = res;
+      }
+    };
+    qrcode.decode(reader.result);
+  };
+  reader.readAsDataURL(node.files[0]);
+}
+</script>
+
+<input type=text size=16 placeholder="Tracking Code" class=qrcode-text><label class=qrcode-text-btn><input type=file accept="image/*" capture=environment onchange="window.openQRCamera(this);" tabindex=-1></label> 
+<input type=button value="Go" disabled>
+   
+  </div>
+
+      <p><button class="w3-button w3-light-grey w3-block">Scan manually</button></p>
+    </div>
+  </div>
+
+  <!-- Information Section -->
+  
+  <div class="w3-container w3-padding-32" id="information">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Information and Options</h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <a href="#scanner" class="w3-bar-item w3-button">Instagram</a>
+        <div class="w3-display-topleft w3-black w3-padding">Instagram</div>
+        <img src="https://www.telegraph.co.uk/content/dam/technology/2016/05/11/new-instagram-logo_1_trans_NvBQzQNjv4BqqVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.jpg?imwidth=450" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Snapchat</div>
+        <img src="https://www.webwise.ie/wp-content/uploads/2014/07/Cms_BcOUcAA9eNU.png" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Facebook</div>
+        <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="House" style="width:90%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Linkedin</div>
+        <img src="https://blog.shareaholic.com/wp-content/uploads/2017/10/linkedin-logo.png" alt="House" style="width:110%">
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">E-mail</div>
+        <img src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/04/Gmail-dfs-new-796x412.jpg" alt="House" style="width:120%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Phone number</div>
+        <img src="https://image.freepik.com/free-icon/telephone-handle-silhouette_318-41969.jpg" alt="House" style="width:60%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Github</div>
+        <img src="https://assets-cdn.github.com/images/modules/open_graph/github-logo.png" alt="House" style="width:80%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Twitter</div>
+        <img src="https://a.slack-edge.com/ae7f/img/services/twitter_512.png" alt="House" style="width:80%">
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Options to choose from page -->
+
+
+  <div class="w3-container w3-padding-32" id="information">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Information and Options</h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <a href="#scanner" class="w3-bar-item w3-button">Instagram</a>
+        <div class="w3-display-topleft w3-black w3-padding">Instagram</div>
+        <img src="https://www.telegraph.co.uk/content/dam/technology/2016/05/11/new-instagram-logo_1_trans_NvBQzQNjv4BqqVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.jpg?imwidth=450" alt="House" style="width:100%">
+      </div>
+    </div>
+    
+<div id="wrapper">
+  <label for="yes_no_radio">Share Instagram?</label>
+<p>
+<input type="radio" name="yes_no" checked>Yes</input>
+</p>
+<p>
+<input type="radio" name="yes_no">No</input>
+</p>
+</div>
+
+<style>
+{
+  font-family: "Open Sans";
+}
+
+{
+  border: 1px solid #888;
+  display: inline-block;
+  padding:20px;
+  
+}
+</style>
+ 
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Snapchat</div>
+        <img src="https://www.webwise.ie/wp-content/uploads/2014/07/Cms_BcOUcAA9eNU.png" alt="House" style="width:100%">
+      </div>
+    </div>
+    
+<div id="wrapper">
+  <label for="yes_no_radio">Share Snapchat?</label>
+<p>
+<input type="radio" name="yes_no" checked>Yes</input>
+</p>
+<p>
+<input type="radio" name="yes_no">No</input>
+</p>
+</div>
+
+<style>
+{
+  font-family: "Open Sans";
+}
+
+{
+  border: 1px solid #888;
+  display: inline-block;
+  padding:20px;
+  
+}
+</style>    
+    
+    
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Facebook</div>
+        <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="House" style="width:90%">
+      </div>
+    </div>
+    
+<div id="wrapper">
+  <label for="yes_no_radio">Share Facebook?</label>
+<p>
+<input type="radio" name="yes_no" checked>Yes</input>
+</p>
+<p>
+<input type="radio" name="yes_no">No</input>
+</p>
+</div>
+
+<style>
+{
+  font-family: "Open Sans";
+}
+
+{
+  border: 1px solid #888;
+  display: inline-block;
+  padding:20px;
+  
+}
+</style>    
+    
+    
+    
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Linkedin</div>
+        <img src="https://blog.shareaholic.com/wp-content/uploads/2017/10/linkedin-logo.png" alt="House" style="width:110%">
+      </div>
+    </div>
+  </div>
+  
+  <div id="wrapper">
+  <label for="yes_no_radio">Share Linkedin?</label>
+<p>
+<input type="radio" name="yes_no" checked>Yes</input>
+</p>
+<p>
+<input type="radio" name="yes_no">No</input>
+</p>
+</div>
+
+<style>
+{
+  font-family: "Open Sans";
+}
+
+{
+  border: 1px solid #888;
+  display: inline-block;
+  padding:20px;
+  
+}
+</style>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">E-mail</div>
+        <img src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/04/Gmail-dfs-new-796x412.jpg" alt="House" style="width:120%">
+      </div>
+    </div>
+<div id="wrapper">
+  <label for="yes_no_radio">Share E-mail?</label>
+<p>
+<input type="radio" name="yes_no" checked>Yes</input>
+</p>
+<p>
+<input type="radio" name="yes_no">No</input>
+</p>
+</div>
+
+<style>
+{
+  font-family: "Open Sans";
+}
+
+{
+  border: 1px solid #888;
+  display: inline-block;
+  padding:20px;
+  
+}
+</style>   
+    
+    
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Phone number</div>
+        <img src="https://image.freepik.com/free-icon/telephone-handle-silhouette_318-41969.jpg" alt="House" style="width:60%">
+      </div>
+    </div>
+    
+<div id="wrapper">
+  <label for="yes_no_radio">Share Contact Info?</label>
+<p>
+<input type="radio" name="yes_no" checked>Yes</input>
+</p>
+<p>
+<input type="radio" name="yes_no">No</input>
+</p>
+</div>
+
+<style>
+{
+  font-family: "Open Sans";
+}
+
+{
+  border: 1px solid #888;
+  display: inline-block;
+  padding:20px;
+  
+}
+</style>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Github</div>
+        <img src="https://assets-cdn.github.com/images/modules/open_graph/github-logo.png" alt="House" style="width:80%">
+      </div>
+    </div>
+    
+<div id="wrapper">
+  <label for="yes_no_radio">Share Github?</label>
+<p>
+<input type="radio" name="yes_no" checked>Yes</input>
+</p>
+<p>
+<input type="radio" name="yes_no">No</input>
+</p>
+</div>
+
+<style>
+{
+  font-family: "Open Sans";
+}
+
+{
+  border: 1px solid #888;
+  display: inline-block;
+  padding:20px;
+  
+}
+</style>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Twitter</div>
+        <img src="https://a.slack-edge.com/ae7f/img/services/twitter_512.png" alt="House" style="width:80%">
+      </div>
+    </div>
+  </div>
+<div id="wrapper">
+  <label for="yes_no_radio">Share Twitter?</label>
+<p>
+<input type="radio" name="yes_no" checked>Yes</input>
+</p>
+<p>
+<input type="radio" name="yes_no">No</input>
+</p>
+</div>
+
+<style>
+{
+  font-family: "Open Sans";
+}
+
+{
+  border: 1px solid #888;
+  display: inline-block;
+  padding:20px;
+  
+}
+</style>
+
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+    <p>This page is linked to the "how it works" button, it has information about how to scan, details and options while sending information.
+    </p>
+  </div>
+
+  <div class="w3-row-padding ">
+    <div class="w3-col l6 m6 w3-margin-bottom">
+      <img src="https://acrobat.adobe.com/content/dam/doc-cloud/images/mobile/scan/adc-scan-app-marquee-512x288.png" alt="John" style="width:100%">
+      <h3>Scanning</h3>
+      <p class="w3-opacity">How to scan someone's profile</p>
+      <p>To get someone's profile, scan the QR code and the profile should appear.</p>
+      <p><button class="w3-button w3-light-grey w3-block">Go</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="https://static-frm.ie.edu/corporate/wp-content/uploads/sites/10/2016/10/Economia-colaborativa-1005x523.jpg" alt="Jane" style="width:100%">
+      <h3>About sharing preferences</h3>
+      <p class="w3-opacity">Learn how to control what to share</p>
+      <p>For security reasons it is recommended that you review our secuirty policies.</p>
+      <p><button class="w3-button w3-light-grey w3-block">Go</button></p>
+    </div>
+    <div class="w3-col l6 m6 w3-margin-bottom">
+      <img src="https://www.percona.com/sites/default/files/No_heat_in_the_house_fixes_-_troubleshooting_your_heating_system.jpg" alt="Mike" style="width:60%">
+      
+      <h3>What to do if you've shared too much</h3>
+      <p class="w3-opacity">An FAQ to worst case scenario cases</p>
+      <p>Here are the do's and dont's when you overshare and choose to retract your information. </p>
+      <p><button class="w3-button w3-light-grey w3-block">Go</button></p>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+    <p>Tell us your feedback, questions or comments!</p>
+    <form action="/action_page.php" target="_blank">
+      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
+      <button class="w3-button w3-black w3-section" type="submit">
+        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+      </button>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  
+
+
+</body>
+</html>
