@@ -1,6 +1,6 @@
 # hackNY2018-fall
 WINNER!
-Won Contentful Prize at NYU hackNY 2018 Hackathon for Best Static Website
+Won Contentful Prize at NYU hackNY 2018 Hackathon for Best Use of Static Website
 
 Qontact, a web app that makes adding new friends easy. Ever run by the hassle of meeting a new friend and needing to ask and add him or her on different social medias? Sometimes things can get difficult when your new friend has a common name and you are searching him up on facebook. With Qontact, you can now add someone you meet and/or share your social medias with a single scan.
 
